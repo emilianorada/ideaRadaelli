@@ -49,6 +49,7 @@ function App() {
 </BrowserRouter>
 
 <Landing />
+
 <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
 
 
