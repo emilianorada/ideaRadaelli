@@ -1,14 +1,18 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap"; 
-import { Outlet, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Outlet, Link } from "react-router-dom";
 
-
+{  }
 const NavBar1 = () => {
     return (
+
+
+        
     <>
     <Navbar className="navBg"  expand="lg">
+
   <Container>
-  <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home">
             <img
             alt=""
             src="/logo.svg"
@@ -27,6 +31,7 @@ const NavBar1 = () => {
                 <Nav.Link as={Link} to="/contact" >Contact</Nav.Link>
         </Nav>
     </Navbar.Collapse>
+
   </Container>
     </Navbar>
     <section>
@@ -37,9 +42,7 @@ const NavBar1 = () => {
 
 
     </>
-        
 
-    
     )
 };
 
@@ -47,3 +50,9 @@ const NavBar1 = () => {
 
 
 export default NavBar1
+
+
+
+
+
+

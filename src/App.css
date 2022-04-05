@@ -54,3 +54,18 @@ section{
 .navBg link{
   color:#9ACAEB;
 }
+
+
+.estiloCarousel{
+  height: 65vh;
+}
+
+
+
+
+
+
+.botonAgregar {
+
+  border-radius: 10%;
+}
