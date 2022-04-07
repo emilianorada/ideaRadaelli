@@ -16,9 +16,11 @@ import Home from './layouts/home';
 import NavBar1 from './Components/NavBar/NavBar';
 import CartWidget from './Components/CartWidget/CartWidget';
 import ItemCount from './Components/ItemListContainer/ItemCount';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 
-
+const titulo = "Listado de Productos:"
 const stock=10;
 const initial= 1;
 const onAdd = (contador) =>{
@@ -31,29 +33,34 @@ const onAdd = (contador) =>{
 function App() {
   return (
 
-    <div className="App">
+    <div className="App fluid-container">
 
-    <BrowserRouter>
+
+                {/*
+                    <BrowserRouter>
+                  
+                        <Routes>
+
+                <Route path='/' element={ <NavBar1 /> }  >
+                    <Route index element={ <Home /> } />
+                    <Route path='/about' element={ <About /> } />
+                    <Route path='/contact' element={ <Contact /> } />
+
+                    <Route path='*' element={ <Navigate replace to="/" /> } />
+                </Route> 
+                </Routes>
+
+                </BrowserRouter>
+                  */}
+
+<NavBar1 />
   
-        <Routes>
-
-<Route path='/' element={ <NavBar1 /> }  >
-    <Route index element={ <Home /> } />
-    <Route path='/about' element={ <About /> } />
-    <Route path='/contact' element={ <Contact /> } />
-
-    <Route path='*' element={ <Navigate replace to="/" /> } />
-</Route> 
-</Routes>
-
-</BrowserRouter>
-
 <Landing />
 
 <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
 
-
-            
+<ItemListContainer titulo={titulo}/>
+<ItemDetailContainer />            
 
 
 

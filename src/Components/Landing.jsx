@@ -4,7 +4,8 @@ import { Button, Carousel } from 'react-bootstrap'
 const Landing = () => {
     return (
 
-        <>  
+        <>
+        <div className='row'>  
         <Carousel>
             <Carousel.Item>
                 <img
@@ -30,11 +31,12 @@ const Landing = () => {
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
-        
+        </div>    
         
             <h1>Landing page</h1>
             <Button variant="info">Info</Button>{' '}
 
+        
         </>
     )
 }

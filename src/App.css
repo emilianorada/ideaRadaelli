@@ -46,14 +46,6 @@ section{
     height: 100vh;  
 }
 
-.navBg{
-  color:#9ACAEB;
-  background-color: #071C2C;
-}
-
-.navBg link{
-  color:#9ACAEB;
-}
 
 
 .estiloCarousel{
@@ -68,4 +60,45 @@ section{
 .botonAgregar {
 
   border-radius: 10%;
+}
+
+
+
+
+body {
+  background-color: #9ACAEB !important;
+}
+
+.navbar {
+  background: #071C2C;
+}
+
+.nav-link {
+  color: #9ACAEB !important;
+}
+
+.nav-item {
+  color: #9ACAEB !important;
+}
+
+.nav-item :hover {
+  color: #0a447a !important;
+}
+
+.nav-item a {
+  color: #9ACAEB !important;
+}
+
+.navbar-brand {
+  color: #9ACAEB !important;
+}
+
+.navbar-toggler {
+  background-color: #9ACAEB !important;
+}
+
+
+.bordesItem{
+border: 2px solid #0a447a;
+border-radius: 15%;
 }

@@ -27,7 +27,7 @@ const FunctionalComponent = ({stock, initial, onAdd}) => {
     return(
         <div style={{backgroundColor: "orange", paddingTop:"20px",}}>
             <div>
-                 <h3>Unidades:</h3>
+                 <h4>Unidades:</h4>
                  <h1>{contador}</h1>   
             </div>
             <div style={{padding: "20px",}}>
@@ -35,7 +35,7 @@ const FunctionalComponent = ({stock, initial, onAdd}) => {
                 <button className='botonAgregar' onClick={() => clickSumar()}>+1</button>
             </div>
             <div  style={{paddingBottom: "20px", }}>
-                <button className='botonAgregar' style={{backgroundColor:"#071C2C", color:"white",}} onClick={()=> addToCart()}>Agregar al carrito</button>
+                <button className='botonAgregar p-2' style={{backgroundColor:"#071C2C", color:"white",}} onClick={()=> addToCart()}>Agregar al carrito</button>
             </div>
         </div>
 
