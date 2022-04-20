@@ -1,32 +1,66 @@
 import React,{useEffect, useState} from 'react'
-import ItemList from '../ItemList/ItemList'
-import { getProducts } from '../../FakeApi'
+import {useParams} from "react-router-dom"
+import { pedirDatos } from '../../helpers/pedirDatos'
+import {ItemList} from '../ItemList/ItemList'
+import { useNavigate } from 'react-router-dom'
 
-const ItemListContainer = ({titulo}) => {
+
+export const ItemListContainer = () => {
 
     const [listaProductos, setListaProductos] = useState([])
-    const [cargando, setCargando] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-   
+    const {categoryId} = useParams() // useParams es el componente, que me va a devolver un objeto donde vamos a tener las keys del segmento dinamico del path
+                                     //  const {categoryId} tiene que tener el mismo nombre que  /:categoryId                                                (osea de categoryId)  
+ 
+  
+    const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,
+                    
 
-// console.log(getProducts)
+    const handleNavigate = () => {
+        navigate(-1)
+        }
 
-  useEffect(()=>{
-      setCargando(true)
-      getProducts
-      .then((res) => setListaProductos(res))
-      .catch((error) => console.log(error))
-      .finally(()=> setCargando(false))
-  }, [])
 
+
+    useEffect( ()=> {
+
+            setLoading(true)
+            
+            pedirDatos()
+                  .then((res) => {
+                            if(categoryId){
+                              setListaProductos( res.filter( (prod) => prod.category===categoryId))
+                            } else{
+                              setListaProductos(res)
+                            }
+                    })
+                  
+                .catch((err) =>{
+                  console.log(err)
+                })
+                .finally(() => {
+                  setLoading(false)
+                })
+
+      }, [categoryId])      
+         
+          
+       
   return (
+    <>
     <div className='row p-3'>
-        <h1>{titulo}</h1>
-        {cargando ? <h2>Cargando productos...</h2> : <ItemList listaProductos={listaProductos}/>}
+  
+        {loading 
+          ? <h2>Cargando productos...</h2> 
+          :  <div> 
+            <ItemList listaProductos={listaProductos}/>
+            <button className="btn btn-success" onClick={handleNavigate}>Volver</button>
+            </div>
+        }
         
         
     </div>
+    </>
   )
 }
-
-export default ItemListContainer

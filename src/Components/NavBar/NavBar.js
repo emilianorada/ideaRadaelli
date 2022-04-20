@@ -1,87 +1,36 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap"; 
-import { BrowserRouter as Router, Switch, Route, Outlet, Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap"; 
+import { Link } from "react-router-dom";
 
-{  }
-const NavBar1 = () => {
+
+export const NavBar1 = () => {
     return (
-
-
-        
-    <>{/*
-    <Navbar className="navBg"  expand="lg">
-
-  <Container>
-        <Navbar.Brand href="#home">
-            <img
-            alt=""
-            src="/logo.svg"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            />{' '}
-        </Navbar.Brand>
-
-    <Navbar.Brand as={Link} to="/" >React-Bootstrap</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-                <Nav.Link as={Link} to="/">Home</Nav.Link>
-                <Nav.Link as={Link} to="/about">About</Nav.Link>
-                <Nav.Link as={Link} to="/contact" >Contact</Nav.Link>
-        </Nav>
-    </Navbar.Collapse>
-
-  </Container>
-    </Navbar>
-    <section>
-        <outlet>
-
-        </outlet>
-    </section>
-    */}
-
-<nav className="navbar navbar-expand-lg navBg sticky-top">
-    <div className="container-fluid">
-      <a className="navbar-brand" href="#">GhostNet</a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Nosotros</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Contacto</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Tienda</a>
-          </li>
-        
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-
-
-
-
-
-    </>
-
-    )
-};
-
-
-
-
-export default NavBar1
+            <Navbar className="navBg" expand="lg">
+                    <Container>
+                            <Navbar.Brand as={Link} to="/"> GhostNet</Navbar.Brand> 
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav" >
+                            <Nav className="me-auto">
+                                <Nav.Link as={Link} to="/nosotros" className="header-link">Nosotros</Nav.Link>
+                                <Nav.Link as={Link} to="/contacto" className="header-link">Contacto</Nav.Link>
+                                <Nav.Link as={Link} to="/tienda" className="header-link">Tienda</Nav.Link>
+                                
+                                {/*
+                                <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                                    <NavDropdown.Item as={Link} to="/category/Cargadores" className="header-link">Cargadores</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item as={Link} to="/category/Periféricos" className="header-link">Periféricos</NavDropdown.Item>
+                                    <NavDropdown.Divider />                                    
+                                    <NavDropdown.Item as={Link} to="/category/Equipos" className="header-link">Equipos</NavDropdown.Item>
+                                </NavDropdown>
+                                */ }
+                                
+                            </Nav>
+                        </Navbar.Collapse>                           
+                    </Container> 
+            </Navbar>
+            )
+}
 
 
 

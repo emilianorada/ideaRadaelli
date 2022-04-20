@@ -1,34 +1,33 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import { Button, Card } from "react-bootstrap"
 import ItemCount from '../ItemListContainer/ItemCount'
 
-const Item = ( {producto} ) => {
+export const Item = ( {id, name, img, description, detail, precio, stock} ) => {
+
 
 
     return (
-        {/*
+        
         <Card style={{ width: '16rem', margin: '12px' }}>
-            <Card.Img variant="top" src={producto.img} />
+            <Card.Img variant="top" src={img} />
             <Card.Body>
-                <Card.Title>{producto.nombre}</Card.Title>               
+                <Card.Title>{name}</Card.Title>               
                 <Card.Text>
-                    Precio: ${producto.precio}
+                    Descripción:{description}
+                    Precio: ${precio}
                 </Card.Text>
-                <Link to={`/detail/${producto.id}`}>
+                <Link to={`/detail/${id}`}>
                     <Button variant="primary">Ver Detalles</Button>
                 </Link>
             </Card.Body>
         </Card>
-    */},
+    
    
-    <div className="card" style={{width:'18rem'}}>
-    <img src={producto.img} className="card-img-top" alt={producto.name}/>
-    <div className="card-body">
-        <h3 className="card-text">{producto.name}</h3>
-        <p className="card-text">{producto.description}</p>
-        <ItemCount />
-    </div>
-</div>
+
+
+
+
 
 
     )

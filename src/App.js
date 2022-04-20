@@ -10,15 +10,14 @@ import ClassComponent from './Components/types/Class';
 
 
 //importo los componentes creados 
-import About from './layouts/about';
-import Contact from './layouts/contact';
-import Home from './layouts/home';
-import NavBar1 from './Components/NavBar/NavBar';
+import {NavBar1} from './Components/NavBar/NavBar';
 import CartWidget from './Components/CartWidget/CartWidget';
 import ItemCount from './Components/ItemListContainer/ItemCount';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import {ItemListContainer} from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
-
+import Contact from "./Components/Contact/contact";
+import Nosotros from "./Components/Nosotros/Nosotros";
+import Tienda from "./Components/Tienda/Tienda";
 
 const titulo = "Listado de Productos:"
 const stock=10;
@@ -46,13 +45,13 @@ function App() {
                     <Route path='/about' element={ <About /> } />
                     <Route path='/contact' element={ <Contact /> } />
 
-                    <Route path='*' element={ <Navigate replace to="/" /> } />
+                    <Route path='*' element={ <Navigate replace to="/" /> } />    // * = cualquier otro elemento 
                 </Route> 
                 </Routes>
 
                 </BrowserRouter>
                   */}
-
+{/*
 <NavBar1 />
   
 <Landing />
@@ -60,8 +59,29 @@ function App() {
 <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
 
 <ItemListContainer titulo={titulo}/>
-<ItemDetailContainer />            
+<ItemDetailContainer />   
+                */}
 
+
+
+<BrowserRouter>
+
+<NavBar1/>
+
+<Routes>
+  <Route path="/" element={ <ItemListContainer/> }/>
+  <Route path="/category/:categoryId" element={ <ItemListContainer/> }/>
+  <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
+  <Route path="/contacto" element={ <Contact/> }/>
+  <Route path="/nosotros" element={ <Nosotros/> }/>
+  <Route path="/tienda" element={ <Tienda/> }/>
+
+  <Route path="*" element={ <Navigate to="/"/> }/>
+</Routes>
+
+{/* Footer */}
+
+</BrowserRouter>
 
 
     </div>

@@ -10,7 +10,7 @@
         {id:'09', name:'Cargador Samsung', img:"./images/tienda9.jpg", description:["Cargador Samsung Original", "Micro Usb Carga Rapida J7 S7"], precio:4685}
 ]
  
-
+{/*
 export const getProducts = new Promise ((resolve, reject) => {
 //acciones
 let condition = true 
@@ -22,3 +22,5 @@ if(condition){
     reject('Algo no funcionó, intente nuevamente mas tarde')
 }
 })
+
+*/}
