@@ -47,7 +47,11 @@
 
 .nav-item{
     color: #9ACAEB;
-    padding: 1rem !important;    
+    padding: 1rem !important;   
+}
+
+.cart{
+    color: #9ACAEB;
 }
 
 

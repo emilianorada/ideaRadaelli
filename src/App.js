@@ -1,13 +1,15 @@
 import './App.css';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import NavBar from './Components/NavBar/NavBar';
 import "./styles/NavBar.css";
+import "./styles/ItemListContainer.css"
 
 function App() {
   return (
     
     <div>
       <NavBar />
-      <h1>GhostNet Telecomunicaciones</h1>
+      <ItemListContainer titulo='Tienda' />
     </div>
   );
 }
