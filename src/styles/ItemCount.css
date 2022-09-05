@@ -1,0 +1,63 @@
+.itemCount{
+    border: 5px solid #071C2C;
+    border-radius: 20px;
+    height: 18rem;
+    width: 20%;
+    display: flex;
+    flex: 1 1 !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.2rem !important;
+}
+.numberSelected {
+    padding: 0.8rem !important;
+    height: 1rem;
+    border: 3px solid #071C2C;
+    border-radius: 10px;
+    display: flex;
+    flex: 1 1;
+    justify-content: center;
+    align-items: center;
+}
+.detail {
+    padding: 1rem !important;
+    height: 2rem;
+    display: flex;
+    flex: 1 1;
+    justify-content: center;
+    align-items: center;
+}
+.count{
+    padding: 1rem 2rem 2rem 2rem !important;
+    height: 3rem;
+    display: flex;
+    flex: 1 1;
+    align-content: center;
+}
+.buttonQuantity {
+    padding: 1.2rem !important;
+    background-color:#071C2C ;
+    color: white;
+    border-radius: 10px;
+    user-select: none;
+    display: flex;
+    flex: 1 1;
+    justify-content: center;
+    align-items: center;
+}
+.buttonQuantity:hover{
+    color:goldenrod;
+    border: 2px solid goldenrod;
+}
+.buttonAdd {
+    padding: 1rem !important;
+    border-radius: 10px;
+    user-select: none;
+    background-color:goldenrod ;
+    color: black;
+}   
+.buttonAdd:hover{
+    color: white;
+    border: 2px solid goldenrod;
+}
