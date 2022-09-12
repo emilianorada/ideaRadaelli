@@ -9,7 +9,7 @@ const ItemList = ({ lista }) => {
             {lista.map((product) => (
                 <div key={product.id}>
                     <Item 
-                        title={product.title}
+                        name={product.name}
                         price={product.price}
                         image= {product.image}
                     />
