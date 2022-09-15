@@ -1,7 +1,10 @@
+import React from 'react';
 import "../../styles/ItemCount.css";
 
 
 const ItemCount = ({items, stock, sumar, restar}) => {
+
+ 
 
     return (
         

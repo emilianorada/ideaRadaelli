@@ -6,6 +6,7 @@ import "./styles/NavBar.css";
 import "./styles/ItemListContainer.css";
 import "./styles/ItemCount.css";
 import ItemCount from './Components/ItemCount/ItemCount';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 
 
@@ -24,6 +25,7 @@ function App() {
       <NavBar />
       <ItemListContainer titulo='Tienda' />
       <ItemCount stock={stock} sumar={sumar} restar={restar} items={items} />
+      <ItemDetailContainer />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import data from '../mockData/mockData';
-import {React, useEffect, useState} from 'react';
+import React,  {useEffect, useState} from 'react';
 import ItemList from '../ItemList/ItemList';
 
 

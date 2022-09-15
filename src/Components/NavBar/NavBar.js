@@ -5,7 +5,7 @@ import CartWidget from "../CartWidget/CartWidget";
 function NavBar ()  {
     return (
 
-      <nav className="nav">
+      <nav className="nav sticky-top">
 
         <div  className="brand">        
           <img src={icono} alt="icono"  />        
