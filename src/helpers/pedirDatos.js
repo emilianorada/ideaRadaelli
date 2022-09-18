@@ -3,7 +3,8 @@ import  data from "../Components/mockData/mockData"
 const pedirDatos = () => {
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            resolve(data)
+            resolve(data);
+            reject('Hubo un error');
         }, 2000)
     })
 }

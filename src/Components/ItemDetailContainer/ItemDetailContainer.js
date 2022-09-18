@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Container} from "react-bootstrap"
+import { useParams} from "react-router-dom"
 import pedirDatos  from '../../helpers/pedirDatos'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
@@ -10,7 +11,7 @@ const ItemDetailContainer = () => {
     const [productDetail, setproductDetail] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const itemId = '03' 
+    const {itemId} = useParams() 
 
     useEffect(()=>{
         setLoading(true)
@@ -19,11 +20,7 @@ const ItemDetailContainer = () => {
         .then((res) => {
           const productFind = res.find((item) => item.id === (itemId));
           setproductDetail(productFind)
-          console.log("roductFind :" , productFind)
-          console.log("res: ", res)
-            
-          //console.log(res[3])
-          //console.log("stock :" , res[3].stock)
+          console.log("productFind :" , productFind)
         })
 
         .then(console.log(productDetail))
@@ -36,9 +33,6 @@ const ItemDetailContainer = () => {
               setLoading(false)
     })
   }, [])
-
-
-
 
 
   return (
