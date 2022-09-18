@@ -38,7 +38,6 @@ function NavBar ()  {
                   <Nav.Link as={Link} to="/tienda" className="nav-item ">Tienda</Nav.Link>
                   <Nav.Link as={Link} to="/cart" className="nav-item "><CartWidget/></Nav.Link>
                   
-                 
                {/*    <NavDropdown title="Categorías" id="basic-nav-dropdown">
                       <NavDropdown.Item as={Link} to="/category/Cargadores" className="header-link">Cargadores</NavDropdown.Item>
                       <NavDropdown.Divider />

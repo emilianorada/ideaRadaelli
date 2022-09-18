@@ -34,9 +34,9 @@ function App() {
               <Route path="/" element={ <ItemListContainer/> }/>
               <Route path="/category/:categoryId" element={ <ItemListContainer/> }/>
               <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
-              <Route path="/pages/contacto" element={ <Contacto/> }/>
-              <Route path="/pages/nosotros" element={ <Nosotros/> }/>
-              <Route path="/pages/tienda" element={ <Tienda/> }/>
+              <Route path="/contacto" element={ <Contacto/> }/>
+              <Route path="/nosotros" element={ <Nosotros/> }/>
+              <Route path="/tienda" element={ <Tienda/> }/>
         </Routes>
 
                 {/*  <ItemListContainer titulo='Tienda' />
