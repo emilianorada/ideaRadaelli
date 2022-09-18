@@ -1,9 +1,18 @@
 import React, {useState} from 'react'
 import { Button, Card } from "react-bootstrap"  
 import ItemCount from '../ItemCount/ItemCount'
+import { useNavigate } from 'react-router-dom'
 
 const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
   
+
+  const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,
+                    
+
+  const handleNavigate = () => {
+        navigate(-1)
+  }
+
     const [cantidad, setCantidad] = useState(1)
   
     return (
@@ -20,9 +29,9 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
                 <ItemCount
                    // stock={stock} sumar={sumar} restar={restar} items={cantidad}
                 />    
-                <Button variant="primary">Ver Detalles</Button>
                 </Card.Body>
         </Card>
+        <button className="btn btn-success" onClick={handleNavigate}>Volver</button>
     </div>
   )
 }
