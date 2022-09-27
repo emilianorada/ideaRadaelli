@@ -1,12 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Button, Card } from "react-bootstrap"  
 import ItemCount from '../ItemCount/ItemCount'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import {CartContext} from '../../Context/CartContext'
+
 
 
 const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
-  
+
+    const {addToCart} = useContext(CartContext);
 
     const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,
                     
@@ -16,9 +19,13 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
 
     const [items, setItems] = useState(0)
 
-    const handleClick = () => {
-              console.log('cantidad: ', items);
-    };
+
+    function onAdd(product){
+      console.log('cantidad: ', items);
+      addToCart(product, count);
+
+    }
+  
   
     return (
     <div>          
@@ -33,7 +40,7 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
                 </Card.Text>
                 <ItemCount setItems={setItems} items={items} />    
                 </Card.Body>
-                <Link to={'/cart'}  onClick={handleClick} className="buttonAdd" >Agregar al carrito</Link> 
+                <Link to={'/cart'}  onClick={() => onAdd(product)} className="buttonAdd" >Agregar al carrito</Link> 
         </Card>
         <button className="btn btn-success" onClick={handleNavigate}>Volver</button>
     </div>
