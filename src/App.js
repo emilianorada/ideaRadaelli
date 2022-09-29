@@ -10,11 +10,10 @@ import Contacto from './pages/contacto';
 import Nosotros from './pages/nosotros';
 import Tienda from './pages/tienda';
 import { CartProvider } from './Context/CartProvider';
+import Cart from './Components/Cart/Cart'; 
 
 
 function App() {
-
-  
 
 
   return (
@@ -31,6 +30,7 @@ function App() {
                     <Route path="/contacto" element={ <Contacto/> }/>
                     <Route path="/nosotros" element={ <Nosotros/> }/>
                     <Route path="/tienda" element={ <Tienda/> }/>
+                    <Route path="/cart" element={ <Cart/> }/>
               </Routes>
 
                       {/*  <ItemListContainer titulo='Tienda' />
