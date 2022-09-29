@@ -9,6 +9,9 @@ import {CartContext} from '../../Context/CartContext'
 
 const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
 
+
+   const data= [id, name, image, description, detail, price, stock];
+
     const {addToCart} = useContext(CartContext);
 
     const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,
@@ -20,9 +23,9 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
     const [items, setItems] = useState(0)
 
 
-    function onAdd(product){
+    function onAdd(data){
       console.log('cantidad: ', items);
-      addToCart(product, count);
+      addToCart(data, items);
 
     }
   
@@ -40,7 +43,7 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
                 </Card.Text>
                 <ItemCount setItems={setItems} items={items} />    
                 </Card.Body>
-                <Link to={'/cart'}  onClick={() => onAdd(product)} className="buttonAdd" >Agregar al carrito</Link> 
+                <Link to={'/cart'}  onClick={() => onAdd(data)} className="buttonAdd" >Agregar al carrito</Link> 
         </Card>
         <button className="btn btn-success" onClick={handleNavigate}>Volver</button>
     </div>
