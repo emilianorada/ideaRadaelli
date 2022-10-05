@@ -10,6 +10,7 @@ import {CartContext} from '../../Context/CartContext'
 const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
 
 
+
    const data= [id, name, image, description, detail, price, stock];
 
     const {addToCart} = useContext(CartContext);
@@ -25,6 +26,7 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
 
     function onAdd(data){
       console.log('cantidad: ', items);
+      console.log('seleccionado: ' , data)
       addToCart(data, items);
 
     }
