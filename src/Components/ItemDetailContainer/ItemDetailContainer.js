@@ -3,60 +3,60 @@ import {Container} from "react-bootstrap"
 import { useParams} from "react-router-dom"
 import pedirDatos  from '../../helpers/pedirDatos'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { getFirestore, doc, getDoc } from 'firebase/firestore'
+import "../../styles/Tienda.css";
+//import { getFirestore, doc, getDoc } from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
 
+    const [loading, setLoading] = useState(true);
+    const [productDetail, setproductDetail] = useState(null);  
 
-  const  { id } = useParams();
-  const [product, setProduct]= useState();
+    const {itemId} = useParams() 
 
-  const db = getFirestore();
+    useEffect(()=>{
+        setLoading(true)
+        pedirDatos()
 
-  const queryDoc = doc(db, 'items', id );  
+        .then((res) => {
+          const productFind = res.find((item) => item.id === (itemId));
+          setproductDetail(productFind)
+          console.log("productFind :" , productFind)
+        })
 
-  getDoc(queryDoc)
-        .then((res)=>{               
-          console.log(res.id);       
-          console.log(res.data());     
-          })
-          .catch((err) => console.log(err));
-          
-    console.log(data);
-    
-    const getProduct = () =>{
-              const queryDoc = doc(db, 'items', id);
-
-              getDoc(queryDoc)
-                .then((res) =>{
-                  setProduct(res.data())
-                })
-                .catch((err) => console.log(err));
-    };
-
-
-      useEffect(()=> {
-        getProduct();
-      }, [id]);
-
+        .then(console.log("Detalle de producto: ", productDetail))
+        
+        .catch((error) => {
+              console.log(error)
+            })
+        
+        .finally(() => {
+              setLoading(false)
+    })
+}, [])
+  
 
       return (
-        <div className='container'>
-        <div className='row'>  
-        <Container className='d-flex justify-content-center'>
-            {
-              loading 
-              ? <p className='p-3'>CARGANDO DETALLES</p> 
-              :  <ItemDetail {...productDetail}   />
-            }       
-        </Container>
-        </div>
+        <div className='container-fluid espacioSuperior'>
+          <div className='row'>  
+            <Container className='d-flex justify-content-center'>
+                {
+                  loading 
+                  ?
+                  <> 
+                    <div>
+                      <h2 className='p-5'>CARGANDO DETALLES...</h2>   
+                    </div>
+                  </>
+                  : <ItemDetail {...productDetail}   />
+                }       
+            </Container>
+          </div>
         </div>
       )
     }
     
-    export default ItemDetailContainer
+  export default ItemDetailContainer
 
 
 
@@ -113,6 +113,57 @@ const ItemDetailContainer = () => {
               setLoading(false)
     })
   }, [])
+
+
+
+
+=========================================================================================================================
+
+
+
+
+const  { id } = useParams();
+  const [product, setProduct]= useState();
+
+  const db = getFirestore();
+
+  const queryDoc = doc(db, 'items', id );  
+
+  getDoc(queryDoc)
+        .then((res)=>{               
+          console.log(res.id);       
+          console.log(res.data());     
+          })
+          .catch((err) => console.log(err));
+          
+    console.log(data);
+    
+    const getProduct = () =>{
+              const queryDoc = doc(db, 'items', id);
+
+              getDoc(queryDoc)
+                .then((res) =>{
+                  setProduct(res.data())
+                })
+                .catch((err) => console.log(err));
+    };
+
+
+      useEffect(()=> {
+        getProduct();
+      }, [id]);
+
+
+
+
+
+
+
+
+
+
+
+
 
 */}
   

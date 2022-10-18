@@ -1,14 +1,14 @@
 import React from 'react';
 import Item from '../Item/Item';
-
+import "../../styles/Tienda.css";
 
 const ItemList = ({ lista }) => {
 
 
     return(
-        <div className='tienda'>
+        <div className='row'>
             {lista.map((product) => (
-                <div key={product.id}>
+                <div key={product.id} className="col-3 fila" >
                     <Item 
                         id= {product.id}
                         name={product.name}
@@ -18,7 +18,6 @@ const ItemList = ({ lista }) => {
                         category= {product.category}
                         price={product.price}                      
                         stock={product.stock}
-                    
                     />
                 </div>
             ))}

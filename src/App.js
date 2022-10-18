@@ -12,31 +12,22 @@ import Tienda from './pages/tienda';
 import { CartProvider } from './Context/CartProvider';
 import Cart from './Components/Cart/Cart'; 
 
-
 function App() {
 
-
-  return (
-    
+  return (    
     <div>
         <CartProvider>
             <BrowserRouter>
-
               <NavBar />
               <Routes>
-                    <Route path="/" element={ <ItemListContainer/> }/>
-                    <Route path="/category/:categoryId" element={ <ItemListContainer/> }/>
+                    <Route path="/" element={ <Tienda/> }/>
+                    <Route path="/category/:categoryId" element={ <Tienda/> }/>
                     <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
                     <Route path="/contacto" element={ <Contacto/> }/>
                     <Route path="/nosotros" element={ <Nosotros/> }/>
                     <Route path="/tienda" element={ <Tienda/> }/>
                     <Route path="/cart" element={ <Cart/> }/>
               </Routes>
-
-                      {/*  <ItemListContainer titulo='Tienda' />
-                          <ItemCount stock={stock} sumar={sumar} restar={restar} items={items} />
-                          <ItemDetailContainer />       */}
-
             </BrowserRouter>
          </CartProvider>                   
     </div>

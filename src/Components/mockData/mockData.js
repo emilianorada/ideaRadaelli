@@ -2,7 +2,7 @@ const data = [
     {
         id:'01', 
         name:'Cargador Portatil', 
-        image:"./images/tienda1.jpg", 
+        image:"/images/tienda/tienda1.jpg", 
         description:"PGadnic Power Bank", 
         detail:"Carga Rapida 25000 Mah",
         category: "Cargadores", 
@@ -12,7 +12,7 @@ const data = [
     {
         id:'02', 
         name:'PC Completa', 
-        image:"./images/tienda2.jpg", 
+        image:"/images/tienda/tienda2.jpg", 
         description:"Intel I5 9na 16gb Ddr4 Hd 1tb Gtx",  
         detail:"1650 4gb Gamer",
         category: "Equipos",
@@ -22,7 +22,7 @@ const data = [
     {
         id:'03', 
         name:'V-sol Onu V2802', 
-        image:"./images/tienda3.jpg", 
+        image:"/images/tienda/tienda3.jpg", 
         description:"V-sol Onu Gpon Wireless Router", 
         detail:"Dual Wi-fi",
         category: "Equipos" ,
@@ -32,7 +32,7 @@ const data = [
     {
         id:'04', 
         name:'Google Chromecast', 
-        image:"./images/tienda4.jpg", 
+        image:"/images/tienda/tienda4.jpg", 
         description:"Google Chromecast 3rd",  
         detail:"Generation Full HD carbón",
         category: "Equipos" ,        
@@ -42,7 +42,7 @@ const data = [
     {
         id:'05', 
         name:'Estabilizador', 
-        image:"./images/tienda5.jpg", 
+        image:"/images/tienda/tienda5.jpg", 
         description:"Estabilizador de tensión", 
         detail:"SurElectric Future ER1000",
         category: "Equipos" ,        
@@ -52,7 +52,7 @@ const data = [
     {
         id:'06', 
         name:'Parlante Bluetooth', 
-        image:"./images/tienda6.jpg", 
+        image:"/images/tienda/tienda6.jpg", 
         description:"Parlante Bluetooth Portatil Mini",
         detail:"Hongo Usb 3w",
         category: "Periféricos",
@@ -62,7 +62,7 @@ const data = [
     {
         id:'07', 
         name:'Parlante Karaoke', 
-        image:"./images/tienda7.jpg", 
+        image:"/images/tienda/tienda7.jpg", 
         description:"Parlante Karaoke Bluetooth",  
         detail:"3000wts Luces + Micrófono",
         category: "Periféricos" ,
@@ -72,7 +72,7 @@ const data = [
     {
         id:'08', 
         name:'Mouse Genius', 
-        image:"./images/tienda8.jpg", 
+        image:"/images/tienda/tienda8.jpg", 
         description:"Mouse Genius Dx-110 Usb 1000",  
         detail:"Dpi Optico Negro",
         category: "Periféricos",
@@ -82,7 +82,7 @@ const data = [
     {
         id:'09', 
         name:'Cargador Samsung', 
-        image:"./images/tienda9.jpg", 
+        image:"/images/tienda/tienda9.jpg", 
         description:"Cargador Samsung Original",  
         detail:"Micro Usb Carga Rapida J7 S7",
         category: "Cargadores",

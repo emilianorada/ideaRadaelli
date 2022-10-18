@@ -1,3 +1,41 @@
 .tienda{
-    display: flex;
+    background-color:#9ACAEB;
+    color: #071C2C;
+    
+   
 }
+.titulo{
+    padding-left: 45px;
+}
+.item{
+    border: 4px solid #071C2C;
+    
+}
+.fila{
+    padding:20px;
+}
+.botonCentrado {
+    display: flex;
+    justify-content: center;
+}
+.centrado{
+    display: flex;
+    justify-content: center;
+}
+.derecha{
+    display: flex;
+    justify-content: end;
+}
+.izquerda{
+    display: flex;
+    justify-content: start;
+}
+
+.espacioInferior{
+    padding-bottom: 5vh;
+}
+
+.espacioSuperior{
+    padding-top: 72px;
+}
+

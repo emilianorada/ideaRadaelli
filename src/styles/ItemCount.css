@@ -1,48 +1,31 @@
 .itemCount{
-    border: 5px solid #071C2C;
-    border-radius: 20px;
-    height: 18rem;
-    width: 20%;
     display: flex;
-    flex: 1 1 !important;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 1.2rem !important;
+    padding-bottom: 0.5rem ;
 }
 .numberSelected {
-    padding: 0.8rem !important;
-    height: 1rem;
+    padding: 0.8rem ;    
     border: 3px solid #071C2C;
     border-radius: 10px;
     display: flex;
-    flex: 1 1;
     justify-content: center;
     align-items: center;
 }
-.detail {
-    padding: 1rem !important;
-    height: 2rem;
-    display: flex;
-    flex: 1 1;
-    justify-content: center;
-    align-items: center;
-}
-.count{
-    padding: 1rem 2rem 2rem 2rem !important;
-    height: 3rem;
+
+.count{    
     display: flex;
     flex: 1 1;
     align-content: center;
 }
 .buttonQuantity {
-    padding: 1.2rem !important;
+    padding: 0.7rem ;
     background-color:#071C2C ;
     color: white;
     border-radius: 10px;
     user-select: none;
     display: flex;
-    flex: 1 1;
     justify-content: center;
     align-items: center;
 }
@@ -51,7 +34,7 @@
     border: 2px solid goldenrod;
 }
 .buttonAdd {
-    padding: 1rem !important;
+    padding: 1rem ;
     border-radius: 10px;
     user-select: none;
     background-color:goldenrod ;

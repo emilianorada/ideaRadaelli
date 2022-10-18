@@ -5,7 +5,7 @@ const pedirDatos = () => {
         setTimeout(() => {
             resolve(data);
             reject('Hubo un error');
-        }, 2000)
+        }, 500)
     })
 }
 
