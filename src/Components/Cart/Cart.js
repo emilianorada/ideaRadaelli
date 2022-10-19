@@ -3,50 +3,56 @@ import { CartContext } from '../../Context/CartContext';
 import "../../styles/Tienda.css";
 import { useNavigate } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
-//import { collection, addDoc, getFirestore, doc} from 'firebase/firestore';
-
+import { getFirestore, collection, doc, addDoc, updateDoc} from 'firebase/firestore';
 
 
 const Cart = () => {
   const { cart, removeItem, clear } = useContext(CartContext);
   console.log('console log de cart: ', cart)
-
-  const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,
-                    
-    const handleNavigate = () => {
+  const rutaInicial = '../images/tienda/'
+  const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,                  
+  const handleNavigate = () => {
          navigate(-1)
     }
-
-    const currency = function(number){
+  const currency = function(number){
       return new Intl.NumberFormat('es-AR', {style: 'currency', currency: 'ARG', minimumFractionDigits: 2}).format(number);
   };
-  
   let subtotal=0;
   let total =  0;
+
+  const createOrder = () => {
+          
+
+
+
+  }
+
+
 
   return (
     <div className='container col-md-12 espacioSuperior' style={{minHeight:'85vh'}}>
         <h1 className='text-center mb-4'>Carrito</h1>
         {cart.length === 0 ? (
           <>
-          <h2 > No hay productos en el Carrito!</h2>
-          <div className='izquierda' style={{marginBottom:'10vh'}}>           
-              <button className='btn btn-secondary' onClick={handleNavigate}> Volver </button>
-          </div>
-          
+              <h2 > No hay productos en el Carrito!</h2>
+              <div className='izquierda' style={{marginBottom:'10vh'}}>           
+                  <button className='btn btn-secondary' onClick={handleNavigate}> Volver </button>
+              </div>
           </>
+
         ) : (
+
           <>         
            <Table striped bordered hover>
                   <thead>
-                    <tr>
-                      <th></th>
-                      <th>#</th>
-                      <th>Producto</th>
-                      <th>Cantidad</th>
-                      <th>Precio Unitario</th>
-                      <th>Subtotal</th>
-                    </tr>
+                      <tr>
+                          <th></th>
+                          <th>#</th>
+                          <th>Producto</th>
+                          <th>Cantidad</th>
+                          <th>Precio Unitario</th>
+                          <th>Subtotal</th>
+                      </tr>
                   </thead>
                   <tbody>
                     {cart.map((item) => (
@@ -57,11 +63,11 @@ const Cart = () => {
                                                                           </svg></b>
                             </button>
                         </td>
-                        <td><img src={item[2]} style={{maxWidth:80}} /></td>
+                        <td><img src={rutaInicial + item[2]} style={{maxWidth:80}} /></td>
                         <td><h3>{item[1]}</h3></td>
                         <td><p>{item.cantidad},00</p></td>
                         <td>${item[5]}</td>
-                        <td>${subtotal += parseFloat(item[5]) * item.cantidad}</td>
+                        <td>${subtotal = parseFloat(item[5]) * item.cantidad}</td>
                       </tr>
                       ))}
                     <tr>                          
@@ -80,81 +86,22 @@ const Cart = () => {
               <button className='btn btn-dark col-md-4  ms-auto'>Finalizar compra</button> 
             </div>
             <div className='row'>
-            <button style={{position: 'fixed', bottom: '5vh'}} className='btn btn-secondary col-md-1 mt-5' onClick={handleNavigate}>          
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                  </svg>  Volver </button>
+                  <button style={{position: 'fixed', bottom: '5vh'}} className='btn btn-secondary col-md-1 mt-5' onClick={handleNavigate}>          
+                              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>  Volver </button>
             </div>           
           </div>
          </>
          )}       
-          </div> 
+    </div> 
             
-          )}
+)}
         
           
-          
-          {/*
-          <div>
-            <button onClick={createOrder}> Crear orden</button>
-          </div>*/}
-      
   
 
 export default Cart
 
 
 
-
-
-
-
-
-
-
-
-
-
-  {/**
- const db = getFirestore();
-  
-  const createOrder = () => {
-    const order= {
-      buyer:{
-        name: 'Juan',
-        phone: '123456789',
-        email: 'test@test.com',
-      },
-      items: cart,
-      total: cart.reduce(
-        (valorPasado, valorActual) =>
-        valorPasado + valorActual.price * valorActual.quantity,
-        0
-      ),
-      date: moment().format(),
-    };
-    const query = collection(db, 'orders');
-    addDoc(query, order)
-      .then(({id}) =>{
-        console.log(id);
-        alert('Felicidades por su compra');
-      })
-      .catch(() =>
-      alert('La compra no pudo ser completada')
-      );
-       
-  };
-
-
-
-
-
-return(
-
-  
-          <div>
-            <button onClick={createOrder}> Crear orden</button>
-          </div>
-)
-
-/ */}
