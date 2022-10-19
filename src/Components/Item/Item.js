@@ -5,10 +5,11 @@ import "../../styles/Tienda.css";
 
 const  Item = ({id, name, image, description, detail, category, price, stock}) => {
 
-    return(
-        
+const rutaInicial= '../images/tienda/';
+
+    return(        
         <Card className='item' style={{ height: '67vh' , margin: '12px' }}>
-            <Card.Img style={{ height:'60%', borderStyle:'none none solid none', borderWidth:'0px 0px 1px 0px'}} variant="top" src={image} />
+            <Card.Img style={{ height:'60%', borderStyle:'none none solid none', borderWidth:'0px 0px 1px 0px'}} variant="top" src={rutaInicial + image}/>
             <Card.Body style={{ height:'40%'}} >                
                         <div style={{ height:'54%'}}>
                                 <Card.Title>{name}</Card.Title>               

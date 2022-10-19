@@ -8,19 +8,13 @@ import {CartContext} from '../../Context/CartContext';
 import "../../styles/Tienda.css";
 
 
-
-
-
 const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
 
 
-
     const data= [id, name, image, description, detail, price, stock];
-
+    const rutaInicial= '../images/tienda/'
     const {addToCart} = useContext(CartContext);
-
-    const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,
-                    
+    const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,  
     const handleNavigate = () => {
          navigate(-1)
     }
@@ -32,7 +26,6 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
       setItems( items);
       console.log('seleccionado: ' , data)
       addToCart(data, items);
-      
     }
   
   
@@ -40,7 +33,7 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
         <div>
               <Card  className='col-6 item' style={{width:'100%', height: '94vh'  }} >
                 <div>
-                  <Card.Img  src={image}  style={{ height:'43vh'}} />
+                  <Card.Img  src={rutaInicial + image} alt={name} style={{ height:'43vh'}} />
                 </div>
                 <div>
                   <Card.Body style={{ height:'43vh'}}>
