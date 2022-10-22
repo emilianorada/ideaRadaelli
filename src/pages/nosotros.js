@@ -1,10 +1,11 @@
 import React from 'react';
+import "../styles/Tienda.css";
 
 function Nosotros () {
 
     return(
-       <div>     
-        <h1>Nosotros</h1>
+       <div className='espacioSuperior'>     
+        <h1>View About us</h1>
             <p>lorem  dfsagffafdsgsdgasgasdgasdgasdgsfdgadsdfdsfadsgsdgasdfgasdadsgsd</p>
             <p>lorem  dfsagffafdsgsdgasgasdgasdgasdgsfdgadsdfdsfadsgsdgasdfgasdadsgsd</p>
             <p>lorem  dfsagffafdsgsdgasgasdgasdgasdgsfdgadsdfdsfadsgsdgasdfgasdadsgsd</p>

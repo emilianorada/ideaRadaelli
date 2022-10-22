@@ -1,11 +1,13 @@
 import React from 'react';
+import "../styles/Tienda.css";
+
 
 function Contacto () {
 
     return(
 
-    <div>
-        <h1>CONTACTO</h1>
+    <div className='espacioSuperior'>
+        <h1>View Contact</h1>
     </div>
         );
 }

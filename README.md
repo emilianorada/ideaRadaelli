@@ -1,6 +1,35 @@
-# Getting Started with Create React App
+# GhostNet telecommunications
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## _ECOMMERCE Project in ReactJs_
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and was developed for the ReactJs course on the CoderHouse platform [![coderhouse](https://emprelatam.com/wp-content/uploads/2019/10/logos-coderhouse-01.png)](https://www.coderhouse.com/)
+
+### Demo: [GhostNet](https://ghostnet-pg8b5cj1c-emilianorada.vercel.app/)
+
+[![home.png](https://i.postimg.cc/HsRJ9J7J/home.png)](https://postimg.cc/tYdCX4ky)
+[![detail3.png](https://i.postimg.cc/tCZJJXm9/detail3.png)](https://postimg.cc/JG8MdWLF)
+[![cart.png](https://i.postimg.cc/W31bvjkL/cart.png)](https://postimg.cc/FfwQyMpD)
+
+
+### Author
+
+> Emiliano Radaelli
+> Contact: emiliano.rada7@gmail.com
+
+
+### Main libraries used in the project
+
+| library                                                          | used                      |
+| ---------------------------------------------------------------- | ------------------------- |
+| [ReactJs](https://es.reactjs.org/)                               | JavaScript framework      |
+| [Create React App](https://github.com/facebook/create-react-app) | Create React Project      |
+| [React-Bootstrap](https://react-bootstrap.github.io)             | UI framework              |
+| [Firebase](https://firebase.google.com/?hl=es)                   | Authentication & DataBase |
+| [React Router](https://reactrouter.com/)                         | Router                    |
+| [Sweetalert](https://sweetalert.js.org/)                         | Sweetalert                |
+
+
+
 
 ## Available Scripts
 
