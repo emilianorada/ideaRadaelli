@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 
 const Cart = () => {
   const { cart, removeItem, clear } = useContext(CartContext);
-  console.log('console log de cart: ', cart)
+  console.log('console log de cart: ', cart);
   const rutaInicial = '../images/tienda/'
   const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,                  
   const handleNavigate = () => {
@@ -29,7 +29,7 @@ const Cart = () => {
               email: ''
             },
       items: cart,
-      total: cart.reduce((acc, item) => acc + item.price*item.quantity, 0),
+      total: cart.reduce((acc, item) => acc + parseFloat(item[5]) * item.cantidad, 0),
       date: moment().format('DD/MM/YYYY, h:mm:ss a'),      
   });
 
@@ -58,17 +58,12 @@ const Cart = () => {
 
   const updateStockProducts =  () => {
     cart.forEach((product) => {
-      const queryUpdate = doc(db, 'items', product.id);
+      const queryUpdate = doc(db, 'items', product[0]);
       updateDoc(queryUpdate, {
-        category:product.category,
-        description: product.description,
-        image: product.image,
-        price: product.price,
-        name: product.name,
-        stock: product.stock - product.quantity
+        stock: product[6] - product['cantidad'],
       }) 
       .then(() => {
-        if(cart[cart.length-1].id === product.id){
+        if(cart[cart.length-1].id === product[0]){
           clear();
           navigate('/');
           console.log("Stock actualizado correctamente");
