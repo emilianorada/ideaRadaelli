@@ -10,7 +10,8 @@ import Contacto from './pages/contacto';
 import Nosotros from './pages/nosotros';
 import Tienda from './pages/tienda';
 import { CartProvider } from './Context/CartProvider';
-import Cart from './Components/Cart/Cart'; 
+import Cart from './Components/Cart/Cart';
+import Footer from './Components/Footer/Footer'; 
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/tienda" element={ <Tienda/> }/>
                     <Route path="/cart" element={ <Cart/> }/>
               </Routes>
+              <Footer />
             </BrowserRouter>
          </CartProvider>                   
     </div>
