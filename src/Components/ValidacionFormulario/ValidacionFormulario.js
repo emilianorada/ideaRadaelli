@@ -1,7 +1,4 @@
 import React from 'react';
-import MostrarError from './MostrarError';
-
-
 
 const ValidacionFormulario = () => {
 

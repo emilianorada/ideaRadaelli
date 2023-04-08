@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from "react-bootstrap"; 
 import "../styles/Tienda.css";
 import "../styles/Nosotros.css";
 
 function Nosotros () {
+
+    const navigate = useNavigate()      //este hook lo que retorna es una funcion que podemos utilizar para manejar la navegacion desde el router,  
+    const handleNavigate = () => {
+         navigate(-1)
+    } 
 
     return(
     <div className='espacioSuperior'>     
@@ -34,6 +41,7 @@ function Nosotros () {
                         <img class="recuadro" src="../images/fusionadora.jpg" width="100%" />
                     </div>
 		        </div>
+                <Button variant="warning" size="lg" className="mt-5 p-3" onClick={handleNavigate}> Volver </Button> 
 	    </div>
     </div>
         );
