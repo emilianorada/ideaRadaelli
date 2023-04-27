@@ -21,10 +21,12 @@ const Home = () => {
 
   return (
     <div className='espacioSup'>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
           <Carousel />
           <div className="container marketing text-center ">{/*--CONTENEDOR GLOBAL--*/}
             <Servicios handleClick={handleClick} />
-  
+    {/*---------------------------------------------BOTON FLOTANTE WSP-------------------------------------------------------------*/}
+   
           <div className="container text-start"> {/*--SEGUNDA SECCION, QUE CONTIENE 2 ARTICULOS--*/}    
 
             <Planes ref={ref} />

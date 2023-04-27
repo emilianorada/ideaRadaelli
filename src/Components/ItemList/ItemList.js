@@ -6,9 +6,9 @@ const ItemList = ({ lista }) => {
 
 
     return(
-        <div className='row'>
+        <div className='row d-flex justify-content-evenly'>
             {lista.map((product) => (
-                <div key={product.id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 fila " > 
+                <div key={product.id} className="col-sm-7 col-md-5 col-lg-4 col-xl-3 col-xxl-3 align-items-xl-start" > 
                     <Item 
                         id= {product.id}
                         name={product.name}

@@ -1,38 +1,39 @@
 import React from 'react';
+import "../../styles/Contacto.css";
 
 const FormularioContacto = () => {
   return (
-    <div class="col-md-7">                            
-                        <div class="well well-sm">               
-                            <form id="formulario" class="form-horizontal" >                  						
+    <div className='formulario'>                            
+                        <div className="well well-sm">               
+                            <form id="formulario" className="form-horizontal" >                  						
                                         <br />
-                                        <div class="form-group">                            
-                                            <div class="col-md-8">
-                                                <input id="nombre" type="text" placeholder="Nombre" class="form-control" required  />
+                                        <div className="form-group">                            
+                                            <div className="col-md-10">
+                                                <input id="nombre" type="text" placeholder="Nombre" className="form-control" required  />
                                             </div>
                                         </div>						
                                         <br />
-                                        <div class="form-group">
-                                            <div class="col-md-8">
-                                                <input id="apellido" type="text" placeholder="Apellido" class="form-control" />
+                                        <div className="form-group">
+                                            <div className="col-md-10">
+                                                <input id="apellido" type="text" placeholder="Apellido" className="form-control" />
                                             </div>
                                         </div>
                                         <br />
-                                        <div class="form-group">
-                                            <div class="col-md-8">
-                                                <input id="email" type="email" placeholder="E-mail" class="form-control" />
+                                        <div className="form-group">
+                                            <div className="col-md-10">
+                                                <input id="email" type="email" placeholder="E-mail" className="form-control" />
                                             </div>
                                         </div>
                                         <br />	
-                                        <div class="form-group">
-                                            <div class="col-md-8">
-                                                <input id="telefono" type="text" placeholder="Telefono" class="form-control" required />
+                                        <div className="form-group">
+                                            <div className="col-md-10">
+                                                <input id="telefono" type="text" placeholder="Telefono" className="form-control" required />
                                                 <hr />
                                             </div>                            
                                         </div>							
-                                        <div class="form-group">                            
-                                                <div class="col-md-8">
-                                                    <select class="form-select" aria-label="Default select example"  id="seleccionado" >
+                                        <div className="form-group">                            
+                                                <div className="col-md-10">
+                                                    <select className="form-select" aria-label="Default select example"  id="seleccionado" >
                                                         <option selected>Motivo de su consulta</option>
                                                         <option value="Productos">Servicios de Internet</option>
                                                         <option value="Servicios">Productos</option>
@@ -42,20 +43,20 @@ const FormularioContacto = () => {
                                                 </div>
                                         </div>
                                         <br />
-                                        <div class="form-group">
-                                            <div class="col-md-8">
-                                                <textarea class="form-control" id="comentarios" placeholder="Comentarios" rows="7"></textarea>
+                                        <div className="form-group">
+                                            <div className="col-md-10">
+                                                <textarea className="form-control" id="comentarios" placeholder="Comentarios" rows="7"></textarea>
                                             </div>
                                         
                                         </div>	
                                         <br />
-                                        <div class="form-group">
-                                            <div id="resultado" class="col-md-8 pt-4"></div>
-                                            <div id="estado" class="col-md-8 pt-4"></div>
+                                        <div className="form-group">
+                                            <div id="resultado" className="col-md-10 pt-4"></div>
+                                            <div id="estado" className="col-md-10 pt-4"></div>
                                         </div>                          
-                                            <div class="col-md-8 text-center">
-                                                <button id="enviarDatos" type="button" class="btn btn-outline-success btn-lg  ">Enviar </button>
-                                                <button id="resetear" type="reset" class="btn btn-outline-info btn-lg">Limpiar datos</button>
+                                            <div className="col-md-10 text-center">
+                                                <button id="enviarDatos" type="button" className="btn btn-outline-success btn-lg  ">Enviar </button>
+                                                <button id="resetear" type="reset" className="btn btn-outline-info btn-lg">Limpiar datos</button>
                                             </div>
                                             </form>
                                     </div>                 

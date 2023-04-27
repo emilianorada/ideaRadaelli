@@ -8,7 +8,6 @@
     color: #9ACAEB;
     background-color:#071C2C ;
     height: 8vh;
-    width: 100vw;
     
 }
 .navs ul{   
@@ -16,8 +15,16 @@
 }
 .navs a{
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 3vh;
     cursor: pointer;
+}
+
+.navbar{
+        max-height: 8vh !important;
+}
+
+.navbar-nav{
+    --bs-nav-link-padding-y: 0;
 }
 
 .brand{
@@ -37,30 +44,33 @@
 
 .nav-links{
     background-color: #071C2C;
-    font-size: 1.3em;
-    
+
+     
 }
 
 .nav-links ul{
  color:#9ACAEB;
+
  
 }
 .nav-links a:hover{
-    color: goldenrod;
-    transform: scale(1.1) ;  
+    /*
+    color: purple;
+    font-size: 3vh;
+    transform: scale(1.1) ;*/  
 }
 
 .nav-links a:visited {
-    color: #9ACAEB;;
+  color: #9ACAEB;
   }
 
 .nav-item{
     color: #9ACAEB;
-    width: 10vw;
+    max-width: 22vh;
 }
 
 .navbar-toggler {
-    max-height: 6vh;
+    height: 5vh;
     background-color: #9ACAEB !important;
   }
 
@@ -71,5 +81,17 @@
 }  
 
 
+
+.cart-widget p{
+    font-size: 80%;
+}
+
+
+
+@media (min-height: 1400px){
+    .navbar-toggler {
+    height: 4vh;
+    }
+}
 
 

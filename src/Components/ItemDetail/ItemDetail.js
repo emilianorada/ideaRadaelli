@@ -31,23 +31,23 @@ const ItemDetail = ({id, name, image, description, detail, price, stock}) => {
   
     return (
         <div>
-              <Card  className='col-6 item' style={{width:'100%', height: '94vh'  }} >
+              <Card  className='col-6 cardDetail' style={{width:'100%' }} >
                 <div>
-                  <Card.Img  src={rutaInicial + image} alt={name} style={{ height:'43vh'}} />
+                  <Card.Img  src={rutaInicial + image} alt={name} />
                 </div>
                 <div>
-                  <Card.Body style={{ height:'43vh'}}>
-                      <div style={{ height:'8vh'}}>
+                  <Card.Body className='bodyDetail'>
+                      <div className='titleCard' >
                         <Card.Title><h3> {name} </h3></Card.Title>
                       </div>                 
                         <Card.Text>
-                            <div style={{ height:'7%'}}>
+                            <div className='descriptionCard' >
                                 <p>Detalle del producto: {description}</p>
                             </div>
-                            <div style={{ height:'7%'}}>
+                            <div className='stockCard' >
                               <p>Stock disponible: {stock}</p>
                             </div>
-                            <div className='centrado' style={{ height:'7%'}}>
+                            <div className='centrado precioCard' >
                               <h4>Precio: ${price}</h4>
                             </div>                            
                         </Card.Text>

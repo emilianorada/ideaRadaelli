@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import "../../styles/Contacto.css";
 
 const DatosContacto = () => {
   return (
-            <div class="col-md-4">
+            <div className='formulario'>
                 <div class="container datos">
                         <hr class="h_hr" />
                         <p>Telefono 99999999</p>					

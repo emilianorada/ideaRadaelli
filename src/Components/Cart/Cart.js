@@ -88,28 +88,31 @@ const Cart = () => {
 
 
   return (
-    <div className='container col-md-12 espacioSuperior' style={{minHeight:'85vh'}}>
+    <div className='container  espacioSuperior' style={{minHeight:'93vh'}}>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></link>
         <h1 className='text-center mb-4'>Carrito</h1>
         {cart.length === 0 ? (
           <>
               <h2 > No hay productos en el Carrito!</h2>
-              <div className='izquierda' style={{marginBottom:'10vh'}}>           
-                  <button className='btn btn-secondary' onClick={handleNavigate}> Volver </button>
+              <div className='izquierda' style={{position: 'fixed', bottom: '8vh'}}>           
+                  <button className='btn btn-warning p-3' onClick={handleNavigate}> Volver </button>
               </div>
           </>
 
         ) : (
 
-          <>         
-           <Table striped bordered hover>
-                  <thead>
+          <>
+          <div className='table-responsive'>        
+           <Table className='table table-sm table-hover table-bordered border-dark'>
+                  <thead class="table-dark">
                       <tr>
-                          <th></th>
+                          
                           <th>#</th>
                           <th>Producto</th>
                           <th>Cantidad</th>
                           <th>Precio Unitario</th>
                           <th>Subtotal</th>
+                          <th></th>
                       </tr>
                   </thead>
                   <tbody>
@@ -119,17 +122,19 @@ const Cart = () => {
                         
                         return(
                       <tr>
-                        <td><button className='btn btn-danger p-3' onClick={() => removeItem(item[0])}><b>
-                                                                          <svg xmlns="http://www.w3.org/2000/svg"  height="35" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                                                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                                                          </svg></b>
-                            </button>
-                        </td>
+                        
                         <td><img src={rutaInicial + item[2]} style={{maxWidth:80}} /></td>
                         <td><h3>{item[1]}</h3></td>
                         <td><p>{item.cantidad},00</p></td>
                         <td>${item[5]}</td>
                         <td>${subtotal}</td>
+                        <td>
+                          <button className='btn btn-danger p-3' onClick={() => removeItem(item[0])}><b>
+                                                                          <svg xmlns="http://www.w3.org/2000/svg"  height="35" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                                                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                                                          </svg></b>
+                            </button>
+                        </td>
                       </tr>
                        )}
                       )} 
@@ -138,19 +143,17 @@ const Cart = () => {
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td align='right'>Total</td>
+                        <td  align='right'>Total</td>
                         <td><b>${total= currency(total)}</b></td>
+                        <td><button  className='btn btn-outline-danger  ' onClick={() => clear()}> Vaciar carrito </button></td>
                     </tr>
                   </tbody>
           </Table>
-          <div className='container col-12 '>
-            <div  className='row align-items-start'>
-                  <div className= 'col-4 '>              
-                    <button  className='btn btn-outline-danger col-md-3' onClick={() => clear()}> Vaciar carrito </button>
-                  </div>      
-                  <div  className='col-8'>
-                          <div className=' m-3 '>
+        </div> 
+          <div className='container  '>
+           
+            <div className='row ms-auto text-center'>         
+                          <div className='col-12 m-3 '>
                               <div>
                                   <label style={{width:'75px'}}>Nombre</label>
                                   <input name="name" type="text" value={order.buyer.name} onChange={handleInputChange}   />          
@@ -166,22 +169,31 @@ const Cart = () => {
                                   <input name="email" type="email" value={order.buyer.email} onChange={handleInputChange}   />          
                               </div>
                               <br />
+                              <button className='btn btn-info ms-auto' onClick={createOrder}> Finalizar compra</button>
                         </div>  
-                        <button className='btn btn-dark col-md-4  ms-auto' onClick={createOrder}> Finalizar compra</button>
-                  </div>             
+                        
+                  </div>
+                              
             </div>
             
             <div className='row'>
-                  <button style={{position: 'fixed', bottom: '5vh'}} className='btn btn-secondary col-md-1 mt-5' onClick={handleNavigate}>          
+              <div className='col-1'>
+                  <button style={{position: 'fixed', bottom: '5vh'}} className='btn btn-warning mt-5' onClick={handleNavigate}>          
                               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                     </svg>  Volver </button>
             </div>           
           </div>
+       
+       
 
          
          </>
-         )}       
+         )}
+          {/*---------------------------------------------BOTON FLOTANTE WSP--------------------------------------------------------------*/}
+          <a href="https://api.whatsapp.com/send?phone=5491164660788&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20%20" className="float" target="_blank">
+                <i className="fa fa-whatsapp my-float"></i>
+            </a>       
     </div> 
             
 )}
